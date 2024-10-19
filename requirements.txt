@@ -1,6 +1,0 @@
-Django==4.2.5         # Specify your Django version
-gunicorn==20.1.0      # WSGI HTTP Server for UNIX
-psycopg2-binary==2.9.5 
-mysqlclient==2.1.0    
-djangorestframework==3.14.0 # For building REST APIs
- Pillow==10.0.0       
