@@ -1,0 +1,6 @@
+Django>=3.6
+djangorestframework
+psycopg2-binary  # For PostgreSQL, replace with mysqlclient if using MySQL
+django-cors-headers  # For handling CORS
+django-debug-toolbar  # For debugging in development
+
