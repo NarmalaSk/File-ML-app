@@ -1,6 +1,8 @@
-Django>=3.6
-djangorestframework
-psycopg2-binary  # For PostgreSQL, replace with mysqlclient if using MySQL
-django-cors-headers  # For handling CORS
-django-debug-toolbar  # For debugging in development
-
+Flask==2.3.3
+gunicorn==20.1.0
+python-dotenv==1.0.0
+Flask-Talisman==1.0.0
+Flask-Compress==1.13
+Flask-Cors==3.0.10
+Flask-SQLAlchemy==3.0.3
+Flask-Migrate==4.0.4
