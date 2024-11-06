@@ -69,14 +69,6 @@ def index():
             else:
                 flash("Please upload a .zip file containing images.", "danger")
 
-        elif "upload_directory" in request.files:
-            uploaded_folder = request.files["upload_directory"]
-            if uploaded_folder and uploaded_folder.filename:
-                folder_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(uploaded_folder.filename))
-                uploaded_folder.save(folder_path)
-
-                flash("Folder uploaded successfully. Click submit to organize them.", "success")
-
         elif request.form.get("submit"):
             organize_images()
             flash("Images have been organized based on detected keywords.", "success")
@@ -84,8 +76,8 @@ def index():
             # After organizing, create a ZIP file of the organized folder
             organized_folder_zip = zip_directory(app.config['OUTPUT_FOLDER'], "organized_images")
             return send_from_directory(
-                directory=os.getcwd(),
-                filename=organized_folder_zip,
+                directory=os.path.dirname(organized_folder_zip),  # Use the directory path of the zip file
+                path=os.path.basename(organized_folder_zip),      # Use just the filename of the zip file
                 as_attachment=True
             )
 
