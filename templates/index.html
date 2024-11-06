@@ -6,6 +6,8 @@
     <title>Image Organizer</title>
 </head>
 <body>
+    <div>
+        <B>CLOUD STORAGE BOX</B>
     <h1>Upload and Organize Images</h1>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -33,5 +35,6 @@
     <form method="POST">
         <button type="submit" name="submit" value="submit">Organize Images</button>
     </form>
+    </div>
 </body>
 </html>
